@@ -22,6 +22,7 @@ document.getElementById('scissors').addEventListener("click", function () {
 });
 
 function user(button) {
+    // chek if it's the end, else play
     if (userPoints === 3 || pcPoints === 3){
         lastResults.innerText = "gagnant de la partie précédente : "
         win();
@@ -36,11 +37,14 @@ function user(button) {
             winCondition(userChoice, pcChoice, userPoints);
         }
 
-        userPointsP.innerText = 'Vous : ' + userPoints;
-        pcPointsP.innerText = 'Ordi : ' + pcPoints;
+        userPointsP.innerText = 'Vous : ' + ' ' + userPoints;
+        pcPointsP.innerText = 'Ordi : ' + ' ' + pcPoints;
     }
 }
 
+/*
+* choose between rock, paper and scissors randomly
+ */
 function pc() {
     playerTurn++;
     const randomNumber = Math.floor(Math.random() * 3);
@@ -83,16 +87,22 @@ function winCondition() {
     }
 }
 
+/*
+* print who won
+ */
 function win() {
     if (userPoints === 3) {
         resultSpan.innerText = 'Bravo ! Vous avez gagné !'
-        lastResults.innerText += 'Vous';
+        lastResults.innerText += ' Vous';
     } else if (pcPoints === 3) {
         resultSpan.innerText = 'L\'ordi à gagné !'
-        lastResults.innerText += "l'ordi";
+        lastResults.innerText += " L'ordi";
     }
 }
 
+/*
+* display a button to reset the game
+ */
 function resetButton() {
     const resetButton = document.getElementById('resetButton');
     resetButton.style.display = 'block';
