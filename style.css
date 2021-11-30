@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    box-sizing: border-box;
+}
+
+#pc {
+    width: 40%;
+}
+
+#pc, #user {
+    width: 40%;
+    border: 1px solid black;
+    padding: 5rem;
+}
+
+#result {
+    width: 20%;
+    border: 1px solid black;
+    padding: 5rem;
+}
