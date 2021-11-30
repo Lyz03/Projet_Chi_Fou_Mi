@@ -23,7 +23,7 @@ document.getElementById('scissors').addEventListener("click", function () {
 
 function user(button) {
     if (userPoints === 3 || pcPoints === 3){
-        lastResults.innerText = "gagnant des parties précédentes : "
+        lastResults.innerText = "gagnant de la partie précédente : "
         win();
         resetButton();
     } else {
