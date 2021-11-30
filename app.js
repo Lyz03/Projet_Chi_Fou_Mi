@@ -3,6 +3,7 @@ const pcP = document.querySelector('#pc p');
 const resultSpan = document.querySelector('#result span');
 const userPointsP = document.getElementById('user_points');
 const pcPointsP = document.getElementById('pc_points');
+const lastResults = document.getElementById('last_results')
 
 let userChoice = '';
 let pcChoice;
@@ -22,6 +23,7 @@ document.getElementById('scissors').addEventListener("click", function () {
 
 function user(button) {
     if (userPoints === 3 || pcPoints === 3){
+        lastResults.innerText = "gagnant des parties précédentes : "
         win();
         resetButton();
     } else {
@@ -84,8 +86,10 @@ function winCondition() {
 function win() {
     if (userPoints === 3) {
         resultSpan.innerText = 'Bravo ! Vous avez gagné !'
+        lastResults.innerText += 'Vous';
     } else if (pcPoints === 3) {
         resultSpan.innerText = 'L\'ordi à gagné !'
+        lastResults.innerText += "l'ordi";
     }
 }
 
@@ -101,5 +105,8 @@ function resetButton() {
         resultSpan.innerText = '';
         userPointsP.innerText = '';
         pcPointsP.innerText = '';
+        userP.innerText = '';
+        pcP.innerText = '';
+        resetButton.style.display = 'none';
     });
 }

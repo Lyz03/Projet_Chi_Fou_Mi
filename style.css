@@ -1,24 +1,56 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #5b5a5a;
+}
+
+p, span {
+    color: gray;
+}
+
 .container {
     display: flex;
     box-sizing: border-box;
+    margin-top: 2rem;
 }
 
-#pc {
+#pc, #result, #user {
+    padding: 3rem;
     width: 40%;
-}
-
-#pc, #user {
-    width: 40%;
-    border: 1px solid black;
-    padding: 5rem;
 }
 
 #result {
     width: 20%;
-    border: 1px solid black;
-    padding: 5rem;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#user p, #pc p {
+    font-size: 2rem;
 }
 
 #resetButton {
     display: none;
+    background: #d4b7e5;
+}
+
+#choiceButtons button, #resetButton {
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+#rock {
+    background-color: #a3add5;
+}
+
+#paper {
+    background-color: #a9bcd7;
+}
+
+#scissors {
+    background-color: #aac7cd;
 }
