@@ -23,6 +23,7 @@ document.getElementById('scissors').addEventListener("click", function () {
 function user(button) {
     if (userPoints === 3 || pcPoints === 3){
         win();
+        resetButton();
     } else {
         if (playerTurn % 2 === 1) {
             userChoice = button;
@@ -86,4 +87,19 @@ function win() {
     } else if (pcPoints === 3) {
         resultSpan.innerText = 'L\'ordi à gagné !'
     }
+}
+
+function resetButton() {
+    const resetButton = document.getElementById('resetButton');
+    resetButton.style.display = 'block';
+    resetButton.addEventListener("click", function () {
+        userChoice = '';
+        pcChoice = '';
+        playerTurn = 1;
+        userPoints = 0;
+        pcPoints = 0;
+        resultSpan.innerText = '';
+        userPointsP.innerText = '';
+        pcPointsP.innerText = '';
+    });
 }
