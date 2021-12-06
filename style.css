@@ -13,8 +13,10 @@ p, span {
 
 .container {
     display: flex;
+    justify-content: center;
     box-sizing: border-box;
     margin-top: 2rem;
+    max-width: 100%;
 }
 
 #pc, #result, #user {
@@ -34,6 +36,7 @@ p, span {
 
 #resetButton {
     display: none;
+    margin: auto;
     background: #d4b7e5;
 }
 
@@ -53,4 +56,29 @@ p, span {
 
 #scissors {
     background-color: #aac7cd;
+}
+
+
+/*
+* responsive
+ */
+@media screen and (max-width: 885px) {
+    .container {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #pc {
+        order: 1;
+    }
+
+    #user {
+        order: 2;
+        width: 100%;
+    }
+
+    #result {
+        width: 50%;
+    }
 }
